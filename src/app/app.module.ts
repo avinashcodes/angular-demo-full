@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatButtonModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
+import { MatCardModule, MatButtonModule, MatChipsModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,9 +11,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     MatCardModule,
     MatButtonModule,
+    MatChipsModule,
     BrowserAnimationsModule
   ],
   providers: [],

@@ -54,12 +54,14 @@
     display: flex;
     margin: 32px auto;
     padding: 0 16px;
-    max-width: 90%;
-    flex-direction: row;
+    width: 100%;
+    //max-width: 90%;
+    //flex-direction: row;
     align-items: center;
   }
   .example-card {
-      //display: inline;
+      display: inline;
+    min-width: 400px;
     max-width: 400px;
     margin-right: 15px;
   }
