@@ -510,11 +510,13 @@ export class MovieServiceService {
       "posterurl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMTU5NTkxNzZeQTJeQWpwZ15BbWU4MDM5NDg2MDQy._V1_SY500_CR0,0,337,500_AL_.jpg"
     }
   ];
-  constructor(httpClient: HttpClient) { }
-  getTopMovies(){
+
+  private API_HOST = "http://localhost:3000/"
+  constructor(private httpClient: HttpClient) { }
+  getTopMovies() {
     return of(this.movies);
   }
-  searchMovies(){
-    return of(this.movies);
+  searchMovies(searchStr) {
+    return this.httpClient.get(`${this.API_HOST}topRated?q=${searchStr}`);
   }
 }
