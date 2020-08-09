@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   constructor(movieService: MovieServiceService){
     movieService
       .getTopMovies()
-      .subscribe(movies => this.movies = movies);
+      .subscribe(movies => {this.movies = movies});
   }
   
 }
