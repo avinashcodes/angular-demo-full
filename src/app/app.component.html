@@ -40,6 +40,39 @@
 </div>
  -->
 
+<!--masonry -->
+<!-- <div class="content" role="main">
+
+  <div class="masonry-with-columns">
+    <ng-container *ngFor="let movie of movies">
+      
+  
+      <mat-card class="example-card" >
+        <mat-card-header>
+          
+          <mat-card-title>{{movie.title}}  <span *ngIf="movie.imdbRating"><mat-chip-list aria-orientation="horizontal"><mat-chip>{{movie.imdbRating}}</mat-chip></mat-chip-list></span>
+          </mat-card-title>
+          <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{movie.storyline.length > 500 ? movie.storyline.slice(500) + '(... more)'  : movie.storyline}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions >
+          
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    
+  </ng-container>
+  </div>
+</div> -->
+
+<!-- masonry end -->
+
 
 <div class="content" role="main">
   <ng-container *ngFor="let movie of movies">
@@ -55,7 +88,7 @@
         <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
         <mat-card-content>
           <p>
-            {{movie.storyline}}
+            {{movie.storyline.length > 500 ? movie.storyline.slice(500) + '(... more)'  : movie.storyline}}
           </p>
         </mat-card-content>
         <mat-card-actions >
