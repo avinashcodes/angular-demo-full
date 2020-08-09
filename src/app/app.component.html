@@ -16,36 +16,19 @@
     <div class="spacer"></div>
 </div>
 
-<mat-card class="example-card">
-  <mat-card-header>
-    
-    <mat-card-title>{{movie.title}}</mat-card-title>
-    <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{movie.storyline}}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+
 <div class="content" role="main">
+ 
   <mat-card class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      
+      <mat-card-title>{{movie.title}}</mat-card-title>
+      <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
+        {{movie.storyline}}
       </p>
     </mat-card-content>
     <mat-card-actions>
@@ -53,19 +36,21 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
-    
-  <!-- Footer -->
-  <footer>
-      Love Angular?&nbsp;
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener"> Give our repo a star.
-        <div class="github-star-badge">
-            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-          Star
-        </div>
-      </a>
-      <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="#1976d2"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-      </a>
-  </footer>
-
+  <mat-card class="example-card">
+    <mat-card-header>
+      
+      <mat-card-title>{{movie.title}}</mat-card-title>
+      <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        {{movie.storyline}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
