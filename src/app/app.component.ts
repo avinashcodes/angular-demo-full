@@ -7,16 +7,32 @@ import { MovieServiceService } from './movie-service.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
+
+  isLoading: boolean;
   ngOnInit(): void {
-    
+
   }
   title = 'angular-demo-full';
   movies = [];
-  constructor(movieService: MovieServiceService){
-    movieService
+  constructor(private movieService: MovieServiceService) {
+    this.movieService
       .getTopMovies()
       .subscribe(movies => {this.movies = movies});
   }
-  
+  searchMovies(event: any) {
+    var searchStr = event.target.value
+    if (!searchStr) {
+      searchStr = "all";
+    }
+    this.isLoading = true;
+    this.movieService.searchMovies(searchStr).subscribe((res) => {
+      this.movies = res as any[];
+      this.isLoading = false;
+
+    })
+  }
+
+
+
 }
