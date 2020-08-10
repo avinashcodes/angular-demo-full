@@ -511,12 +511,12 @@ export class MovieServiceService {
     }
   ];
 
-  private API_HOST = "http://localhost:3000/"
+  private API_HOST = "http://localhost:3000"
   constructor(private httpClient: HttpClient) { }
   getTopMovies() {
-    return of(this.movies);
+    return this.httpClient.get<any[]>(this.API_HOST + "/comingSoon");
   }
   searchMovies(searchStr) {
-    return this.httpClient.get(`${this.API_HOST}topRated?q=${searchStr}`);
+    return this.httpClient.get<any[]>(`${this.API_HOST}/topRated?q=${searchStr}`);
   }
 }

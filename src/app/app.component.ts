@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   constructor(private movieService: MovieServiceService) {
     this.movieService
       .getTopMovies()
-      .subscribe(movies => this.movies = movies);
+      .subscribe(movies => {this.movies = movies});
   }
   searchMovies(event: any) {
     var searchStr = event.target.value

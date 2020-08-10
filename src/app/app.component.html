@@ -18,37 +18,81 @@
   <div class="row">
     <ng-container *ngFor="let movie of movies">
       <span class="col">
+  <span style="margin-left: 20px;">
 
-        <mat-card class="example-card" >
-          <mat-card-header>
-            
-            <mat-card-title>{{movie.title}}  <span *ngIf="movie.imdbRating"><mat-chip-list aria-orientation="horizontal"><mat-chip>{{movie.imdbRating}}</mat-chip></mat-chip-list></span>
-            </mat-card-title>
-            <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
-          <mat-card-content>
-            <p>
-              {{movie.storyline}}
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            
-            <button mat-button>LIKE</button>
-            <button mat-button>SHARE</button>
-          </mat-card-actions>
-        </mat-card>
-      </span>
-    </ng-container>
+    <input type="text" placeholder="Search..." />
+    <button type="button" class="btn btn-primary">Search </button>
+  </span>
+  <div class="spacer"></div>
+</div>
+<div layout="row" layout-wrap>
+  <ng-container *ngFor="let movie of movies">
+    <mat-card class="example-card" flex>
+      <mat-card-header>
+
+        <mat-card-title>{{movie.title}} <span *ngIf="movie.imdbRating">
+            <mat-chip-list aria-orientation="horizontal">
+              <mat-chip>{{movie.imdbRating}}</mat-chip>
+            </mat-chip-list>
+          </span>
+        </mat-card-title>
+        <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          {{movie.storyline}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </ng-container>
+</div>
+ -->
+
+<!--masonry -->
+<!-- <div class="content" role="main">
+
+  <div class="masonry-with-columns">
+    <ng-container *ngFor="let movie of movies">
+      
+  
+      <mat-card class="example-card" >
+        <mat-card-header>
+          
+          <mat-card-title>{{movie.title}}  <span *ngIf="movie.imdbRating"><mat-chip-list aria-orientation="horizontal"><mat-chip>{{movie.imdbRating}}</mat-chip></mat-chip-list></span>
+          </mat-card-title>
+          <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            {{movie.storyline.length > 500 ? movie.storyline.slice(500) + '(... more)'  : movie.storyline}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions >
+          
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
     
+  </ng-container>
   </div>
 </div> -->
 <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
 
+<!-- masonry end -->
+
+
 <div class="content" role="main">
 
   <ng-container *ngFor="let movie of movies">
-
 
     <mat-card class="example-card">
       <mat-card-header>
@@ -64,7 +108,7 @@
       <img mat-card-image [src]="movie.posterurl" alt="Photo of a Shiba Inu">
       <mat-card-content>
         <p>
-          {{movie.storyline}}
+          {{movie.storyline.length > 500 ? movie.storyline.slice(500) + '(... more)'  : movie.storyline}}
         </p>
       </mat-card-content>
       <mat-card-actions>
