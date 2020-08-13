@@ -8,15 +8,15 @@
 
 
 <div class="content">
-  
-    <mat-card>
-      <mat-form-field>
-        <mat-icon matPrefix>search</mat-icon>
-        <input matInput type="search" placeholder="Quick Search" class="search-input" [(ngModel)]="searchStr"
-          (keydown.enter)="searchMovies($event)">
-      </mat-form-field>
-    </mat-card>
-  
+
+  <mat-card>
+    <mat-form-field>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput type="search" placeholder="Quick Search" class="search-input" [(ngModel)]="searchStr"
+        (keydown.enter)="searchMovies($event)">
+    </mat-form-field>
+  </mat-card>
+
 </div>
 <div class="content">
 
@@ -28,11 +28,11 @@
         <mat-card-title>{{movie.title}}</mat-card-title>
         <mat-card-subtitle>{{movie.genres.join(", ")}}</mat-card-subtitle>
         <mat-card-subtitle>{{movie.releaseDate | date:"MMM, dd"}}</mat-card-subtitle>
-            <mat-card-subtitle *ngIf="movie.imdbRating">
-              <mat-chip-list aria-orientation="horizontal">
-                IMDb<mat-chip>{{movie.imdbRating}}</mat-chip>
-              </mat-chip-list>
-            </mat-card-subtitle>
+        <mat-card-subtitle *ngIf="movie.imdbRating">
+          <mat-chip-list aria-orientation="horizontal">
+            IMDb<mat-chip>{{movie.imdbRating}}</mat-chip>
+          </mat-chip-list>
+        </mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image [src]="movie.posterurl" alt="Poster of {{movie.title}}">
       <mat-card-content>
