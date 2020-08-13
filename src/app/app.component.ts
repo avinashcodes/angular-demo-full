@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieServiceService } from './movie-service.service';
+import { MovieService } from './movie.service';
 
 
 @Component({
@@ -15,10 +15,14 @@ export class AppComponent implements OnInit {
   }
   title = 'angular-demo-full';
   movies = [];
-  constructor(private movieService: MovieServiceService) {
+  constructor(private movieService: MovieService) {
+    this.isLoading = true;
     this.movieService
       .getTopMovies()
-      .subscribe(movies => {this.movies = movies});
+      .subscribe(movies => {
+        this.movies = movies;
+        this.isLoading = false;
+      });
   }
   searchMovies(event: any) {
     var searchStr = event.target.value
@@ -27,7 +31,7 @@ export class AppComponent implements OnInit {
     }
     this.isLoading = true;
     this.movieService.searchMovies(searchStr).subscribe((res) => {
-      this.movies = res as any[];
+      this.movies = res;
       this.isLoading = false;
 
     })
